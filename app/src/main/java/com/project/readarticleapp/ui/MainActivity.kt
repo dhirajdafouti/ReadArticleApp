@@ -1,7 +1,8 @@
-package com.project.readarticleapp
+package com.project.readarticleapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.project.readarticleapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
