@@ -1,7 +1,5 @@
 package com.project.readarticleapp.model
 
-import com.squareup.moshi.Json
-
 data class ArticleModelDetails(
     val featured: Boolean,
     val id: Int,
