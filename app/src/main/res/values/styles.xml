@@ -19,7 +19,7 @@
         <item name="android:paddingBottom">?android:actionBarSize</item>
     </style>
 
-    <style name="MoviesImageView">
+    <style name="ArticleImageView">
         <item name="android:layout_marginTop">@dimen/dimen_16</item>
         <item name="android:layout_marginBottom">@dimen/dimen_16</item>
         <item name="android:layout_marginLeft">@dimen/dimen_16</item>
@@ -35,7 +35,7 @@
         <item name="cardElevation">@dimen/dimen_6</item>
     </style>
 
-    <style name="MoviesTitle">
+    <style name="ArticleTitle">
         <item name="android:layout_marginLeft">@dimen/dimen_16</item>
         <item name="android:layout_marginTop">@dimen/dimen_16</item>
         <item name="android:layout_marginRight">@dimen/dimen_8</item>
@@ -44,14 +44,14 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="MoviesSubtitle">
+    <style name="ArticleSubtitle">
         <item name="android:layout_marginLeft">@dimen/dimen_16</item>
         <item name="android:layout_marginTop">@dimen/dimen_8</item>
         <item name="android:textColor">@color/textColor</item>
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="MoviesPriceAvailability">
+    <style name="ArticleAvailability">
         <item name="android:layout_marginLeft">@dimen/dimen_16</item>
         <item name="android:layout_marginTop">@dimen/dimen_8</item>
         <item name="android:textColor">@color/textColor</item>

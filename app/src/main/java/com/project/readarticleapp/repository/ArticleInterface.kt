@@ -2,7 +2,6 @@ package com.project.readarticleapp.repository
 
 import com.project.readarticleapp.data.database.ArticleEntity
 import com.project.readarticleapp.data.network.networkModels.RemoteArticleData
-import com.project.readarticleapp.model.ArticleModelList
 import retrofit2.Response
 
 interface ArticleInterface {
