@@ -9,12 +9,20 @@ data class RemoteArticleData(
 
 data class RemoteArticleItem(
     @Json(name = "featured") val featured: Boolean,
+
     @Json(name = "id") val id: Int,
+
     @Json(name = "imageUrl") val imageUrl: String,
+
     @Json(name = "newsSite") val newsSite: String,
+
     @Json(name = "publishedAt") val publishedAt: String,
+
     @Json(name = "summary") val summary: String,
+
     @Json(name = "title") val title: String,
+
     @Json(name = "updatedAt") val updatedAt: String,
+
     @Json(name = "url") val url: String,
 )
