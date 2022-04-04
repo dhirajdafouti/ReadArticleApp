@@ -8,11 +8,14 @@ interface ArticleDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertArticles(articleEntity: List<ArticleEntity>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertArticlesWithId(articleEntity: ArticleEntity)
+
     @Query("Select *FROM article_table")
-    fun getArticles(): List<ArticleEntity>
+    fun getArticlesFromDataBase(): List<ArticleEntity>
 
     @Query("Select *FROM article_table WHERE :id=id")
-    fun getArticlesWithId(id: Int)
+    fun getArticleWithId(id: Int):ArticleEntity
 
     //TODO:The functionality of the application  can be extended with Sort Order.
     //The Items from the database can be fetched with sort order id.

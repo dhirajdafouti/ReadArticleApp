@@ -24,4 +24,10 @@ interface ArticleService {
     //https://api.spaceflightnewsapi.net/v3/articles?_sort=id
     @GET("/v3/articles?_sort=id")
     suspend fun getArticlesWithSortOrder(): Response<RemoteArticleData>
+
+    //TODO:The functionality of the application can be extended with fetching the Article with Item Id
+    //Article with id..
+    //https://api.spaceflightnewsapi.net/v3/articles/{id}
+    @GET("/v3/articles")
+    suspend fun getArticlesWithArticleId(@Query("id") id: Int): Response<RemoteArticleData>
 }
