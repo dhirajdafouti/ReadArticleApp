@@ -1,7 +1,7 @@
 package com.project.readarticleapp.data.network.networkModels
 
+import com.squareup.moshi.FromJson
 import com.squareup.moshi.Json
-
 
 data class RemoteArticleData(
     val remoteArticleData: List<RemoteArticleItem>,
@@ -10,6 +10,9 @@ data class RemoteArticleData(
 data class RemoteArticleItem(
     @Json(name = "featured") val featured: Boolean,
 
+    @Json(name = "events") val events: List<Any>,
+
+    @Json(name = "launches") val launches: List<Any>,
     @Json(name = "id") val id: Int,
 
     @Json(name = "imageUrl") val imageUrl: String,

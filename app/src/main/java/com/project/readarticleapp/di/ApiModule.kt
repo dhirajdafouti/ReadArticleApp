@@ -24,6 +24,6 @@ class ApiModule {
         retrofit.create(ArticleService::class.java)
 
     companion object {
-        private const val BASE_URL: String = "https://api.spaceflightnewsapi.net/v3/articles"
+        private const val BASE_URL: String = "https://api.spaceflightnewsapi.net"
     }
 }

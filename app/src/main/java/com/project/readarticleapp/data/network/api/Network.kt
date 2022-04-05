@@ -8,6 +8,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.util.concurrent.TimeUnit
 
 fun createNetworkClient(baseUrl: String) =
@@ -34,6 +35,7 @@ private fun retrofitClient(
     Retrofit.Builder()
         .baseUrl(baseUrl)
         .client(httpClient)
+        .addConverterFactory(ScalarsConverterFactory.create())
         .addConverterFactory(MoshiConverterFactory.create(moshiBuilder))
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .build()

@@ -55,12 +55,13 @@ class ArticleViewModel @Inject constructor(
                     val response =
                         articleRepoInterface.getArticlesFromRemoteServer().body()?.remoteArticleData
                             ?: emptyList()
+                    System.out.println("Data Remote"+response.toString())
                     if (isSuccess && code.toString() == HTTP_RESPONSE_SUCCESS) {
                         articleRepoInterface.saveArticlesDataToDataBase(
                             NetworkArticleData(response).asArticleDataBaseModel()
                         )
                         val databaseItems = articleRepoInterface.getArticleDataListFromDataBase()
-                        ArticleResult.Success(DataBaseArticleData(databaseItems).asArticleUiDataModel())
+                        _articleListData.postValue(ArticleResult.Success(DataBaseArticleData(databaseItems).asArticleUiDataModel()))
                         _progress.postValue(false)
                     } else {
                         when (code.toString()) {
@@ -95,7 +96,8 @@ class ArticleViewModel @Inject constructor(
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 val articleDetails = articleRepoInterface.getArticleDataDetailsFromDataBase(id)
-                ArticleDetailsResult.Success(DataBaseArticleDetailsData(articleDetails).asArticleDetailsUiDataModel())
+                System.out.println("Data Remote"+articleDetails.toString())
+                _articleDetailsData.postValue(ArticleDetailsResult.Success(DataBaseArticleDetailsData(articleDetails).asArticleDetailsUiDataModel()))
             }
         }
     }
