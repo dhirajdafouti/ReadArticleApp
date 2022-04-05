@@ -37,11 +37,12 @@ Design Consideration
 -Timber
 
 
-Testing Libraries.
- MockWebServer (Okhttp)
- RoboElectic
- Espersso
- Junit4
+##Testing Libraries.
+
+-MockWebServer (Okhttp)
+-RoboElectic
+-Espersso
+-Junit4
 
 This app demonstrates the following views and techniques from the below documentation.
 
