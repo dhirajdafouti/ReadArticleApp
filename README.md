@@ -58,12 +58,9 @@ Notice any issues with a repository? Please file a github issue in the repositor
 
 ## 📷 Screenshots
 <img src ="./screensort/" width="260" />
-<img src ="./screensort/Screenshot_1649179178.png" width="260" />
-<img src ="./screensort/Screenshot_1649179192.png" width="260" />
-<img src ="./screensort/Screenshot_1649179196.png" width="260" />
-<img src ="./screensort/Screenshot_1649179540.png" width="260" />
-<img src ="./screensort/Screenshot_1649179586.png" width="260" />
-<img src ="./screensort/Screenshot_1649180788.png" width="260" />
+<img src ="./screensort/Screenshot_1649179178.png" width="260" /> <img src ="./screensort/Screenshot_1649179192.png" width="260" />
+<img src ="./screensort/Screenshot_1649179196.png" width="260" /><img src ="./screensort/Screenshot_1649179540.png" width="260" />
+<img src ="./screensort/Screenshot_1649179586.png" width="260" /><img src ="./screensort/Screenshot_1649180788.png" width="260" />
 <img src ="./screensort/Screenshot_1649180808.png" width="260" />
 
 
