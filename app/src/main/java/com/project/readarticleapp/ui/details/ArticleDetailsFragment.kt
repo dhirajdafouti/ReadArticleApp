@@ -12,6 +12,7 @@ import com.project.readarticleapp.R
 import com.project.readarticleapp.data.network.networkModels.result.ArticleDetailsResult
 import com.project.readarticleapp.databinding.FragmentArticleDetailsBinding
 import com.project.readarticleapp.ui.viewmodel.ArticleViewModel
+import com.project.readarticleapp.utils.BindingAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -45,10 +46,23 @@ class ArticleDetailsFragment : Fragment() {
         viewModel.articleDetailsData.observe(viewLifecycleOwner, Observer {
             when (it) {
                 is ArticleDetailsResult.Success -> {
-                    binding.article1.text = it.data.id.toString()
-                    binding.article2.text = it.data.title
-                    binding.article3.text = it.data.publishedAt
-                    binding.article4.text = it.data.updatedAt.toString()
+                    System.out.println(it.data.toString())
+                    if (BindingAdapter.validUrl(it.data.imageUrl)) {
+                        BindingAdapter.bindLoadImage(binding.mainImageView, it.data.imageUrl)
+                    }
+                    val url = it.data.url
+                    binding.articlePublishedText.text = it.data.id.toString()
+                    binding.articleFeaturedText.text = it.data.featured.toString()
+                    binding.articlePublishedText.text = it.data.publishedAt
+                    binding.articleFeaturedText.text = it.data.updatedAt
+                    binding.articleWeb.setOnClickListener {
+                        val intent = android.content.Intent(
+                            android.content.Intent.ACTION_VIEW,
+                            android.net.Uri.parse(url)
+                        )
+                        context?.startActivity(intent)
+                    }
+
                     showMessage(getString(R.string.success))
                 }
                 is ArticleDetailsResult.Error ->

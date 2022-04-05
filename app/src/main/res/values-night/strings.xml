@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="article_id_text">ArticleId</string>
+    <string name="article_featured">ArticleFeatured Status</string>
+    <string name="article_published_header">Article Published At</string>
+</resources>

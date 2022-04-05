@@ -29,7 +29,7 @@ object BindingAdapter {
 
     fun validUrl(url: String?): Boolean {
         if (url != null) {
-            if (url.contains(".png") || url.contains(".jpg")) {
+            if (url.endsWith(".png") || url.endsWith(".jpg")) {
                 return true
             }
         }

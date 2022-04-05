@@ -4,7 +4,6 @@ import com.project.readarticleapp.data.database.ArticleDao
 import com.project.readarticleapp.data.database.ArticleEntity
 import com.project.readarticleapp.data.network.api.ArticleService
 import com.project.readarticleapp.data.network.networkModels.RemoteArticleData
-import org.json.JSONArray
 import retrofit2.Response
 import javax.inject.Inject
 

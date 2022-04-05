@@ -10,4 +10,7 @@
     <string name="general_error_message">There is a problem. Please try again later</string>
     <string name="loading">Loading</string>
     <string name="success">SuccessFully loaded</string>
+    <string name="article_id_text">ArticleId</string>
+    <string name="article_featured">Article Featured Status</string>
+    <string name="article_published_header">Article Published At</string>
 </resources>

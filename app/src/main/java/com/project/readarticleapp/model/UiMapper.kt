@@ -16,7 +16,8 @@ fun DataBaseArticleDetailsData.asArticleDetailsUiDataModel(): ArticleModelDetail
         summary = articleData.summary,
         title = articleData.title,
         updatedAt = articleData.updatedAt,
-        url = articleData.url
+        url = articleData.url,
+        imageUrl = articleData.imageUrl
 
     )
 }

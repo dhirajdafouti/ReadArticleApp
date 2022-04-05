@@ -8,4 +8,5 @@ data class ArticleModelDetails(
     val title: String,
     val updatedAt: String,
     val url: String,
+    val imageUrl:String
 )

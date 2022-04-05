@@ -2,7 +2,6 @@ package com.project.readarticleapp.ui.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.webkit.URLUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
