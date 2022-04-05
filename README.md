@@ -3,9 +3,7 @@ This is a sample read Article list Android application 📱 built to demonstrate
 Android Application following the Clean MVVM Architecture concepts.
 
 Design Consideration 
-<img src ="./screensort/" width="260" />
-<img src ="./screensort/ApplicationBlockDiagram.png" width="260" />
-<img src ="./screensort/MVVM Design.png" width="260" />
+<img src ="./screensort/ApplicationBlockDiagram.png" width="260" /> <img src ="./screensort/MVVM Design.png" width="260" />
 
 ## ⚙ Tech used
 - Apis
