@@ -73,7 +73,7 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/article_id_text"
-                        style="@style/ArticleSubtitle"
+                        style="@style/ArticleTitle"
                         android:textColor="@color/black"
                         android:textAllCaps="true"
                         android:layout_width="match_parent"
@@ -115,7 +115,7 @@
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/article_featured_text"
-                            style="@style/ArticleSubtitle"
+                            style="@style/ArticleTitle"
                             android:textColor="@color/black"
                             android:textAllCaps="true"
                             android:layout_width="match_parent"
@@ -131,7 +131,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/text_movies_header"
-                        android:padding="16dp"
+                        android:padding="@dimen/dimen_8"
                         android:src="@mipmap/ic_launcher_round" />
 
                 </LinearLayout>
@@ -139,7 +139,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/article_published_id"
                     style="@style/ArticleTitle"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/dimen_0"
                     android:textColor="@color/black"
                     android:textAllCaps="true"
                     android:layout_height="wrap_content"
@@ -151,7 +151,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/article_published_text"
-                    style="@style/ArticleSubtitle"
+                    style="@style/ArticleTitle"
                     android:textColor="@color/black"
                     android:textAllCaps="true"
                     android:layout_width="match_parent"
@@ -176,9 +176,9 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/article_updated_text"
-                    style="@style/ArticleSubtitle"
-                    android:layout_width="match_parent"
+                    style="@style/ArticleTitle"
                     android:textColor="@color/black"
+                    android:layout_width="match_parent"
                     android:textAllCaps="true"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"

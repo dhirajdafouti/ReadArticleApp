@@ -51,10 +51,10 @@ class ArticleDetailsFragment : Fragment() {
                         BindingAdapter.bindLoadImage(binding.mainImageView, it.data.imageUrl)
                     }
                     val url = it.data.url
-                    binding.articlePublishedText.text = it.data.id.toString()
+                    binding.articlePublishedText.text = it.data.publishedAt.toString()
                     binding.articleFeaturedText.text = it.data.featured.toString()
-                    binding.articlePublishedText.text = it.data.publishedAt
-                    binding.articleFeaturedText.text = it.data.updatedAt
+                    binding.articleIdText.text = it.data.id.toString()
+                    binding.articleUpdatedText.text = it.data.updatedAt
                     binding.articleWeb.setOnClickListener {
                         val intent = android.content.Intent(
                             android.content.Intent.ACTION_VIEW,
