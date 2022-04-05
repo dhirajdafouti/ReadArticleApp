@@ -1,27 +1,45 @@
 ## Read Article Application
-This is a sample read Article list Android application 📱 built to demonstrate how to use Jetpack Architecture Components in an
+Read Articles Android application 📱 built to demonstrate how to use Jetpack Architecture Components in an
 Android Application following the Clean MVVM Architecture concepts.
 
 Design Consideration 
 <img src ="./screensort/ApplicationBlockDiagram.png" width="260" /> <img src ="./screensort/MVVM Design.png" width="260" />
 
-## ⚙ Tech used
-- Apis
+## ⚙ Tech/Libraries used And Features
+- Retrieve Network Data from API (REST API)
 - Kotlin
 - Model-View-Viewmodel Architecture
+- Single Activity Application
 - JetPackComponents
 - Navigation component
 - Room database
 - Retrofit 2
+- Database caching
 - GSON
-- Hilt
-- Moshi
+- Monitoring Network Connectivity
+- Hilt for Dependeny Injection.
+- Moshi.
+- Unit Tests.
+- Android Testing.
+- Jacoco Plugin Intergrated for Code Coverage.
 - Kotlin Courtines.
 - Glide.
 - Piccaso.
 - View Bindings
 -Data-Binding.
 -SQL-queries.
+-Less Boiler Plate code.
+-RecyclerView
+-CardView
+-LeakCanary
+-Timber
+
+
+Testing Libraries.
+ MockWebServer (Okhttp)
+ RoboElectic
+ Espersso
+ Junit4
 
 This app demonstrates the following views and techniques from the below documentation.
 
@@ -45,12 +63,10 @@ To get started with this project, simply pull the repository and import the proj
 * NOTE: In order for this project to pull data, you no need to add your API Key and please sure the internet connectivity is good.The Api is used without taking the access token which is permissiable but can access to some limit .Please dont panic if you find some error in between, its the Apis sending us :)
 * [Google Developers Console](https://console.developers.google.com/)
 
-## 🚀 Features & Suggested Workflow
+## 🚀 Application Workflow
 - Get list of Articles on (Screen 1)
-- Get details of any specific Article.On clicking on the item in the list.(Screen 2)
+- Get details of any specific Article.On clicking on the particluar item in the list.(Screen 2)
 - User details on Web Browser.(Screen 3).Please click on  Icon on Screen2 on the right side.
-- Clean MVVM Architecture.
-
 
 
 ## Report Issues
