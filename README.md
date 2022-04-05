@@ -2,8 +2,10 @@
 Read Articles Android application 📱 built to demonstrate how to use Jetpack Architecture Components in an
 Android Application following the Clean MVVM Architecture concepts.
 
-Design Consideration 
-<img src ="./screensort/ApplicationBlockDiagram.png" width="260" /> <img src ="./screensort/MVVM Design.png" width="260" />
+Design Consideration
+
+ <img src ="./screensort/MVVM Design.png" width="260" />
+ <img src ="./screensort/ApplicationBlockDiagram.png" width="260" />
 
 ## ⚙ Tech/Libraries used And Features
 - Retrieve Network Data from API (REST API)
