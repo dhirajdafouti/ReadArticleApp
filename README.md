@@ -18,6 +18,7 @@ Android Application following the Clean MVVM Architecture concepts.
 - Database caching
 - GSON
 - Monitoring Network Connectivity
+- Swipe To Refresh
 - Hilt for Dependeny Injection.
 - Moshi.
 - Unit Tests.
