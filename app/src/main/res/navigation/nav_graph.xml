@@ -7,11 +7,11 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.project.readarticleapp.ui.details.ArticleDetailsFragment"
+        android:name="com.project.readarticleapp.ui.main.ArticleListFragment"
         android:label="Articles"
         tools:layout="@layout/fragment_article_list">
         <action
-            android:id="@+id/action_homeFragment_to_detailsFragment"
+            android:id="@+id/action_listFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
@@ -21,7 +21,7 @@
         android:name="com.project.readarticleapp.ui.details.ArticleDetailsFragment"
         tools:layout="@layout/fragment_article_details">
         <action
-            android:id="@+id/action_detailsFragment_to_homeFragment"
+            android:id="@+id/action_detailsFragment_to_listFragment"
             app:destination="@id/listFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />

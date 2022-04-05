@@ -11,7 +11,7 @@ sealed class ArticleResult {
 
 sealed class ArticleDetailsResult {
 
-    data class Success(val data: List<ArticleModelDetails>) : ArticleDetailsResult()
+    data class Success(val data: ArticleModelDetails) : ArticleDetailsResult()
     data class Error(val error: String, val code: String) : ArticleDetailsResult()
 }
 

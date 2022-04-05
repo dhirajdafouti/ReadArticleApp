@@ -4,7 +4,7 @@ import com.project.readarticleapp.data.database.ArticleEntity
 
 data class DataBaseArticleData(val articleDataList: List<ArticleEntity>)
 
-data class DataBaseArticleDetailsData(val articleData: ArticleModelDetails)
+data class DataBaseArticleDetailsData(val articleData: ArticleEntity)
 
 //The function will be a mapper from the database object to the ui object.
 

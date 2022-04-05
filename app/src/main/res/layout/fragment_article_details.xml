@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="viewModel"
+            type="com.project.readarticleapp.ui.viewmodel.ArticleViewModel" />
+
+        <variable
             name="model"
             type="com.project.readarticleapp.model.DataBaseArticleData" />
     </data>
@@ -86,6 +90,19 @@
                 tools:text="@tools:sample/lorem" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <ProgressBar
+            android:id="@+id/status_loading_wheel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:shadowColor="@color/colorAccent"
+            android:text="@string/loading"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

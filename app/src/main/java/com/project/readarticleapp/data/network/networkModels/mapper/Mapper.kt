@@ -1,8 +1,9 @@
 package com.project.readarticleapp.data.network.networkModels.mapper
 
 import com.project.readarticleapp.data.database.ArticleEntity
+import com.project.readarticleapp.data.network.networkModels.RemoteArticleItem
 
-data class NetworkArticleData(val remoteArticleData: List<ArticleEntity>)
+data class NetworkArticleData(val remoteArticleData: List<RemoteArticleItem>)
 
 //The function will be a mapper from the Remote data objects to the database objects.
 fun NetworkArticleData.asArticleDataBaseModel(): List<ArticleEntity> {
