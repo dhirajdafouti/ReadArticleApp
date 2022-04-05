@@ -17,7 +17,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.project.readarticleapp.R
 import com.project.readarticleapp.data.network.networkModels.result.ArticleResult
 import com.project.readarticleapp.databinding.FragmentArticleListBinding
-import com.project.readarticleapp.ui.details.ArticleDetailsFragmentDirections
 import com.project.readarticleapp.ui.viewmodel.ArticleViewModel
 import com.project.readarticleapp.utils.NetworkUtils
 import dagger.hilt.android.AndroidEntryPoint
@@ -82,7 +81,7 @@ class ArticleListFragment : Fragment() {
     }
 
     private fun onItemClicked(id: Int) {
-        viewModel.setMovieId(id)
+        viewModel.setArticleId(id)
     }
 
     private fun swipeToRefresh() {

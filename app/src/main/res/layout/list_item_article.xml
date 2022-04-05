@@ -26,8 +26,8 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/movies_imageView"
                 style="@style/ArticleImageView"
-                android:layout_width="100sp"
-                android:layout_height="100sp"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
                 android:contentDescription="@string/text_movies_header"
                 android:src="@mipmap/ic_launcher_foreground"
                 android:transitionName="photo"
@@ -47,13 +47,28 @@
                 tools:text="@tools:sample/lorem" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/article_sub_title"
-                style="@style/ArticleSubtitle"
-                android:layout_width="wrap_content"
+                android:id="@+id/article_site_text"
+                style="@style/ArticleTitle"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_16"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/movies_imageView"
                 app:layout_constraintTop_toBottomOf="@+id/article_title_text"
-                tools:text="@tools:sample/full_names" />
+                tools:text="@tools:sample/lorem"
+                tools:ignore="SpUsage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/article_summary_text"
+                style="@style/ArticleTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/movies_imageView"
+                app:layout_constraintTop_toBottomOf="@+id/article_site_text"
+                tools:text="@tools:sample/lorem" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

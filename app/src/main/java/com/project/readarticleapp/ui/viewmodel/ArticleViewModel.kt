@@ -52,14 +52,15 @@ class ArticleViewModel @Inject constructor(
             _progress.postValue(true)
             withContext((Dispatchers.IO)) {
                 try {
-                    val isSuccess = articleRepoInterface.getArticlesFromRemoteServer().isSuccessful
-                    val code = articleRepoInterface.getArticlesFromRemoteServer().code()
-                    val response =
-                        articleRepoInterface.getArticlesFromRemoteServer().body()
+                    val result = articleRepoInterface.getArticlesFromRemoteServer()
+                    val isSuccess = result.isSuccessful
+                    val code = result.code()
+                    val response = result.body()
                     if (isSuccess && code.toString() == HTTP_RESPONSE_SUCCESS) {
+                        val jsonArray = JSONArray(result.body())
                         articleRepoInterface.saveArticlesDataToDataBase(
                             NetworkArticleData(
-                                parseRemoteArticleJsonToResult(JSONArray(response))).asArticleDataBaseModel()
+                                parseRemoteArticleJsonToResult(jsonArray)).asArticleDataBaseModel()
                         )
                         val databaseItems = articleRepoInterface.getArticleDataListFromDataBase()
                         _articleListData.postValue(ArticleResult.Success(DataBaseArticleData(
@@ -100,7 +101,9 @@ class ArticleViewModel @Inject constructor(
                 val articleDetails = articleRepoInterface.getArticleDataDetailsFromDataBase(id)
                 _articleDetailsData.postValue(ArticleDetailsResult.Success(
                     DataBaseArticleDetailsData(articleDetails).asArticleDetailsUiDataModel()))
+                _progress.postValue(false)
             }
+
         }
     }
 
@@ -123,16 +126,11 @@ class ArticleViewModel @Inject constructor(
         _articleIdValue.value = null
     }
 
-    fun setMovieId(movieId: Int) {
+    fun setArticleId(movieId: Int) {
         _articleIdValue.value = movieId
         setItemId(movieId)
     }
 
-    fun reSetMovieId() {
-        _articleIdValue.removeObserver(Observer {
-            _articleIdValue.value = 0
-        })
-    }
 
     fun setItemId(id: Int) {
         this@ArticleViewModel.articleId = id

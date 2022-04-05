@@ -24,9 +24,11 @@ fun DataBaseArticleDetailsData.asArticleDetailsUiDataModel(): ArticleModelDetail
 fun DataBaseArticleData.asArticleUiDataModel(): List<ArticleModelList> {
     return articleDataList.map {
         ArticleModelList(
-            id=it.id,
+            id = it.id,
             imageUrl = it.imageUrl,
-            site = it.newsSite
+            site = it.newsSite,
+            title = it.title,
+            summary = it.summary
         )
     }
 }

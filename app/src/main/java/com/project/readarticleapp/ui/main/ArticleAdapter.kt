@@ -2,6 +2,7 @@ package com.project.readarticleapp.ui.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.webkit.URLUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -44,8 +45,12 @@ class ArticleAdapter(private val onItemClicked: (Int) -> Unit) :
             userData: ArticleModelList,
             onItemClicked: (id: Int) -> Unit,
         ) {
-            binding.articleSubTitle.text = userData.site
-            BindingAdapter.bindImage(binding.moviesImageView, userData.imageUrl)
+            binding.articleTitleText.text = userData.title
+            binding.articleSiteText.text = userData.site
+            binding.articleSummaryText.text = userData.summary
+            if (BindingAdapter.validUrl(userData.imageUrl)) {
+                BindingAdapter.bindLoadImage(binding.moviesImageView, userData.imageUrl)
+            }
             binding.root.setOnClickListener {
                 onItemClicked(userData.id)
             }

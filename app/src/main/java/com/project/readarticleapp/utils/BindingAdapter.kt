@@ -26,4 +26,13 @@ object BindingAdapter {
                 .into(imgView)
         }
     }
+
+    fun validUrl(url: String?): Boolean {
+        if (url != null) {
+            if (url.contains(".png") || url.contains(".jpg")) {
+                return true
+            }
+        }
+        return false
+    }
 }

@@ -33,10 +33,8 @@ fun NetworkArticleData.asArticleDataBaseModel(): List<ArticleEntity> {
 fun parseRemoteArticleJsonToResult(jsonResult: JSONArray): ArrayList<RemoteArticleItem> {
     val remoteArticleData = ArrayList<RemoteArticleItem>()
     try {
-
-        val jsonArray = JSONArray(jsonResult)
-        for (i in 0 until jsonArray.length()) {
-            val jsonObject: JSONObject = jsonArray.getJSONObject(i)
+        for (i in 0 until jsonResult.length()) {
+            val jsonObject: JSONObject = jsonResult.getJSONObject(i)
             val id = jsonObject.optInt("id")
             val title = jsonObject.optString("title")
             val url = jsonObject.optString("url")
@@ -60,6 +58,5 @@ fun parseRemoteArticleJsonToResult(jsonResult: JSONArray): ArrayList<RemoteArtic
     } catch (e: JSONException) {
         Timber.d("Json Exception Received...")
     }
-
     return remoteArticleData
 }
