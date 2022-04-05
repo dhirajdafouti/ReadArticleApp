@@ -60,6 +60,14 @@ And this will generate the report for an instrumented test:
 - .gradlew connectedDebugAndroidTest
 You can check the code coverage report of your instrumented and unit tests locally. For your instrumented test, locate your Android studio projects folder in your system. Then navigate to your project folder: _(CodeCoverageExample) > app > build > reports > androidTests > connected > flavors > debugAndroidTest > Index.html.
 
+## ⚙ Focus is on Testing the application which is in PROGRESS...
+⚙DATABASE TESTING COMPLETED
+⚙REST API TESTING PENDING.
+⚙ REPROSITORY TESTING PENDING.
+⚙ VIEWMODEL TESTING PENDING.
+⚙ FRAGMENT NAVIGATION TESTING USING ESPERSSO PENDING.
+⚙ ACTIVITY TESTING IS COMPLETED.
+
 
 ##⚙ To get started with this project, simply pull the repository and import the project into Android Studio. From there, deploy the project to an emulator or device. 
 
@@ -76,7 +84,6 @@ You can check the code coverage report of your instrumented and unit tests local
 Notice any issues with a repository? Please file a github issue in the repository.
 
 ## 📷 Screenshots
-<img src ="./screensort/" width="260" />
 <img src ="./screensort/Screenshot_1649179178.png" width="260" /> <img src ="./screensort/Screenshot_1649179192.png" width="260" />
 <img src ="./screensort/Screenshot_1649179196.png" width="260" /><img src ="./screensort/Screenshot_1649179540.png" width="260" />
 <img src ="./screensort/Screenshot_1649179586.png" width="260" /><img src ="./screensort/Screenshot_1649180788.png" width="260" />
