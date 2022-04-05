@@ -60,7 +60,6 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/article_id"
                         style="@style/ArticleTitleDetails"
-                        android:textColor="@color/black"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/article_id_text"
@@ -85,7 +84,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
@@ -100,8 +99,6 @@
                             android:id="@+id/article_featured_id"
                             style="@style/ArticleTitleDetails"
                             android:layout_width="match_parent"
-                            android:textColor="@color/black"
-                            android:textAllCaps="true"
                             android:layout_height="wrap_content"
                             android:text="@string/article_featured"
                             android:textStyle="bold"
@@ -160,6 +157,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+                    android:text="@string/article_updated_header"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/movies_imageView"
                     app:layout_constraintTop_toTopOf="parent"

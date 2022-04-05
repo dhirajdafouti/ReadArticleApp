@@ -111,6 +111,7 @@ dependencies {
     implementation "androidx.core:core-ktx:$version_core"
     implementation("androidx.fragment:fragment-ktx:$version_fragment_ktx")
 
+    implementation 'com.cedarsoftware:json-io:4.10.1'
     // Navigation
     implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
     implementation "android.arch.navigation:navigation-ui-ktx:$version_navigation"

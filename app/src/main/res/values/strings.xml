@@ -13,4 +13,5 @@
     <string name="article_id_text">Article Id</string>
     <string name="article_featured">Article Featured Status</string>
     <string name="article_published_header">Article Published At</string>
+    <string name="article_updated_header">Article Updated At</string>
 </resources>
