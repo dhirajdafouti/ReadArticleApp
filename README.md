@@ -2,7 +2,7 @@
 Read Articles Android application 📱 built to demonstrate how to use Jetpack Architecture Components in an
 Android Application following the Clean MVVM Architecture concepts.
 
-Design Consideration
+Design Consideration for the sample with flow diagram
 
  <img src ="./screensort/MVVM Design.png" width="260" />
  <img src ="./screensort/ApplicationBlockDiagram.png" width="260" />
@@ -61,11 +61,16 @@ You can check the code coverage report of your instrumented and unit tests local
 
 ##⚙Focus is on Testing the application And Status below
 
--DATABASE TESTING COMPLETED
--REST API TESTING PENDING
--REPROSITORY TESTING PENDING
--VIEWMODEL TESTING PENDING
--FRAGMENT NAVIGATION TESTING USING ESPERSSO PENDING
+-DATABASE TESTING COMPLETED.
+
+-REST API TESTING PENDING.
+
+-REPROSITORY TESTING PENDING.
+
+-VIEWMODEL TESTING PENDING.
+
+-FRAGMENT NAVIGATION TESTING USING ESPERSSO PENDING.
+
 -ACTIVITY TESTING IS COMPLETED
 
 
