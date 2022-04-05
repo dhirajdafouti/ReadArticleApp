@@ -81,7 +81,7 @@ You can check the code coverage report of your instrumented and unit tests local
 ## 🚀 Application Workflow
 - Get list of Articles on (Screen 1)
 - Get details of any specific Article.On clicking on the particluar item in the list.(Screen 2)
-- User details on Web Browser.(Screen 3).Please click on  Icon on Screen2 on the right side.
+- Article details on Web Browser.(Screen 3).Please click on  Icon on Screen2 on the right side.
 
 
 ## Report Issues
