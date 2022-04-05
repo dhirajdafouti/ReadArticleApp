@@ -2,6 +2,11 @@ package com.project.readarticleapp.data.network.networkModels.mapper
 
 import com.project.readarticleapp.data.database.ArticleEntity
 import com.project.readarticleapp.data.network.networkModels.RemoteArticleItem
+import org.json.JSONObject
+import org.json.JSONArray
+import org.json.JSONException
+import timber.log.Timber
+
 
 data class NetworkArticleData(val remoteArticleData: List<RemoteArticleItem>)
 
@@ -21,4 +26,40 @@ fun NetworkArticleData.asArticleDataBaseModel(): List<ArticleEntity> {
 
         )
     }
+}
+
+//The Article Data received from server is parsed.
+
+fun parseRemoteArticleJsonToResult(jsonResult: JSONArray): ArrayList<RemoteArticleItem> {
+    val remoteArticleData = ArrayList<RemoteArticleItem>()
+    try {
+
+        val jsonArray = JSONArray(jsonResult)
+        for (i in 0 until jsonArray.length()) {
+            val jsonObject: JSONObject = jsonArray.getJSONObject(i)
+            val id = jsonObject.optInt("id")
+            val title = jsonObject.optString("title")
+            val url = jsonObject.optString("url")
+            val imageUrl = jsonObject.optString("imageUrl")
+            val newsSite = jsonObject.optString("newsSite")
+            val publishedAt = jsonObject.optString("publishedAt")
+            val summary = jsonObject.optString("summary")
+            val updatedAt = jsonObject.optString("updatedAt")
+            val featured = jsonObject.getBoolean("featured")
+            remoteArticleData.add(RemoteArticleItem(featured = featured,
+                id = id,
+                imageUrl = imageUrl,
+                newsSite = newsSite,
+                publishedAt = publishedAt,
+                summary = summary,
+                updatedAt = updatedAt,
+                url = url,
+                title = title))
+
+        }
+    } catch (e: JSONException) {
+        Timber.d("Json Exception Received...")
+    }
+
+    return remoteArticleData
 }

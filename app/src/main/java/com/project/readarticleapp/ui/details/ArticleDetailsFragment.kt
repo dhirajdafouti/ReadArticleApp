@@ -63,7 +63,7 @@ class ArticleDetailsFragment : Fragment() {
     }
 
     private fun sendRequestToFetchMovieData() {
-        viewModel.getArticleWithIdFromServer(viewModel.getItemId())
+        viewModel.getArticleDetails(viewModel.getItemId())
     }
 
 

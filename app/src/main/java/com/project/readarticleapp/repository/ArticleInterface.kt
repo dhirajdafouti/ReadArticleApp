@@ -1,11 +1,12 @@
 package com.project.readarticleapp.repository
 
+import com.google.gson.JsonObject
 import com.project.readarticleapp.data.database.ArticleEntity
 import com.project.readarticleapp.data.network.networkModels.RemoteArticleData
 import retrofit2.Response
 
 interface ArticleInterface {
-    suspend fun getArticlesFromRemoteServer(): Response<RemoteArticleData>
+    suspend fun getArticlesFromRemoteServer(): Response<String>
     suspend fun saveArticlesDataToDataBase(articleData: List<ArticleEntity>)
 
     //TODO:The functionality of the application can be extended with fetching the Article with Item Id from Remote Server.

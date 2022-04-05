@@ -1,31 +1,25 @@
 package com.project.readarticleapp.data.network.networkModels
 
-import com.squareup.moshi.FromJson
-import com.squareup.moshi.Json
-
 data class RemoteArticleData(
-    val remoteArticleData: List<RemoteArticleItem>,
+    val remoteArticleData: ArrayList<RemoteArticleItem>,
 )
 
 data class RemoteArticleItem(
-    @Json(name = "featured") val featured: Boolean,
+    val featured: Boolean,
 
-    @Json(name = "events") val events: List<Any>,
+    val id: Int,
 
-    @Json(name = "launches") val launches: List<Any>,
-    @Json(name = "id") val id: Int,
+    val imageUrl: String,
 
-    @Json(name = "imageUrl") val imageUrl: String,
+    val newsSite: String,
 
-    @Json(name = "newsSite") val newsSite: String,
+    val publishedAt: String,
 
-    @Json(name = "publishedAt") val publishedAt: String,
+    val summary: String,
 
-    @Json(name = "summary") val summary: String,
+    val title: String,
 
-    @Json(name = "title") val title: String,
+    val updatedAt: String,
 
-    @Json(name = "updatedAt") val updatedAt: String,
-
-    @Json(name = "url") val url: String,
+    val url: String,
 )

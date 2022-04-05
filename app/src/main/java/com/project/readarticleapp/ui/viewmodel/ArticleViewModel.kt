@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.*
 import com.project.readarticleapp.data.network.networkModels.mapper.NetworkArticleData
 import com.project.readarticleapp.data.network.networkModels.mapper.asArticleDataBaseModel
+import com.project.readarticleapp.data.network.networkModels.mapper.parseRemoteArticleJsonToResult
 import com.project.readarticleapp.data.network.networkModels.result.ArticleDetailsResult
 import com.project.readarticleapp.data.network.networkModels.result.ArticleResult
 import com.project.readarticleapp.model.DataBaseArticleData
@@ -15,6 +16,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.json.JSONArray
 import java.io.IOException
 import javax.inject.Inject
 
@@ -53,15 +55,15 @@ class ArticleViewModel @Inject constructor(
                     val isSuccess = articleRepoInterface.getArticlesFromRemoteServer().isSuccessful
                     val code = articleRepoInterface.getArticlesFromRemoteServer().code()
                     val response =
-                        articleRepoInterface.getArticlesFromRemoteServer().body()?.remoteArticleData
-                            ?: emptyList()
-                    System.out.println("Data Remote"+response.toString())
+                        articleRepoInterface.getArticlesFromRemoteServer().body()
                     if (isSuccess && code.toString() == HTTP_RESPONSE_SUCCESS) {
                         articleRepoInterface.saveArticlesDataToDataBase(
-                            NetworkArticleData(response).asArticleDataBaseModel()
+                            NetworkArticleData(
+                                parseRemoteArticleJsonToResult(JSONArray(response))).asArticleDataBaseModel()
                         )
                         val databaseItems = articleRepoInterface.getArticleDataListFromDataBase()
-                        _articleListData.postValue(ArticleResult.Success(DataBaseArticleData(databaseItems).asArticleUiDataModel()))
+                        _articleListData.postValue(ArticleResult.Success(DataBaseArticleData(
+                            databaseItems).asArticleUiDataModel()))
                         _progress.postValue(false)
                     } else {
                         when (code.toString()) {
@@ -96,8 +98,8 @@ class ArticleViewModel @Inject constructor(
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 val articleDetails = articleRepoInterface.getArticleDataDetailsFromDataBase(id)
-                System.out.println("Data Remote"+articleDetails.toString())
-                _articleDetailsData.postValue(ArticleDetailsResult.Success(DataBaseArticleDetailsData(articleDetails).asArticleDetailsUiDataModel()))
+                _articleDetailsData.postValue(ArticleDetailsResult.Success(
+                    DataBaseArticleDetailsData(articleDetails).asArticleDetailsUiDataModel()))
             }
         }
     }
