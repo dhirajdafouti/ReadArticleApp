@@ -59,9 +59,8 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/article_id"
-                        style="@style/ArticleTitle"
+                        style="@style/ArticleTitleDetails"
                         android:textColor="@color/black"
-                        android:textAllCaps="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/article_id_text"
@@ -73,9 +72,8 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/article_id_text"
-                        style="@style/ArticleTitle"
+                        style="@style/ArticleSubtitleDetails"
                         android:textColor="@color/black"
-                        android:textAllCaps="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +98,7 @@
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/article_featured_id"
-                            style="@style/ArticleTitle"
+                            style="@style/ArticleTitleDetails"
                             android:layout_width="match_parent"
                             android:textColor="@color/black"
                             android:textAllCaps="true"
@@ -115,9 +113,7 @@
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/article_featured_text"
-                            style="@style/ArticleTitle"
-                            android:textColor="@color/black"
-                            android:textAllCaps="true"
+                            style="@style/ArticleSubtitleDetails"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -138,11 +134,10 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/article_published_id"
-                    style="@style/ArticleTitle"
-                    android:layout_width="@dimen/dimen_0"
-                    android:textColor="@color/black"
-                    android:textAllCaps="true"
+                    style="@style/ArticleTitleDetails"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
                     android:text="@string/article_published_header"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/movies_imageView"
@@ -151,9 +146,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/article_published_text"
-                    style="@style/ArticleTitle"
-                    android:textColor="@color/black"
-                    android:textAllCaps="true"
+                    style="@style/ArticleSubtitleDetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -163,9 +156,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/article_updated_id"
-                    style="@style/ArticleTitle"
-                    android:textColor="@color/black"
-                    android:textAllCaps="true"
+                    style="@style/ArticleTitleDetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
@@ -176,10 +167,8 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/article_updated_text"
-                    style="@style/ArticleTitle"
-                    android:textColor="@color/black"
+                    style="@style/ArticleSubtitleDetails"
                     android:layout_width="match_parent"
-                    android:textAllCaps="true"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/movies_imageView"

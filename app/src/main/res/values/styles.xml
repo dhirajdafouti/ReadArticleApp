@@ -44,10 +44,26 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="ArticleTitleDetails">
+        <item name="android:layout_marginLeft">@dimen/dimen_16</item>
+        <item name="android:layout_marginTop">@dimen/dimen_16</item>
+        <item name="android:layout_marginRight">@dimen/dimen_8</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="ArticleSubtitle">
         <item name="android:layout_marginLeft">@dimen/dimen_16</item>
         <item name="android:layout_marginTop">@dimen/dimen_8</item>
         <item name="android:textColor">@color/textColor</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ArticleSubtitleDetails">
+        <item name="android:layout_marginLeft">@dimen/dimen_16</item>
+        <item name="android:layout_marginTop">@dimen/dimen_8</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:textSize">14sp</item>
     </style>
 
