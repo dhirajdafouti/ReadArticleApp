@@ -27,20 +27,20 @@ Android Application following the Clean MVVM Architecture concepts.
 - Glide.
 - Piccaso.
 - View Bindings
--Data-Binding.
--SQL-queries.
--Less Boiler Plate code.
--RecyclerView
--CardView
--LeakCanary
--Timber
+- Data-Binding.
+- SQL-queries.
+- Less Boiler Plate code.
+- RecyclerView
+- CardView
+- LeakCanary
+- Timber
 
 
 ##⚙ Testing Libraries
--MockWebServer(Okhttp)
--RoboElectic
--Espersso
--Junit4
+- MockWebServer(Okhttp)
+- RoboElectic
+- Espersso
+- Junit4
 
 ## ⚙Integrating the Jacoco plugin.
 
@@ -60,17 +60,17 @@ You can check the code coverage report of your instrumented and unit tests local
 
 ##⚙Focus is on Testing the application And Status below
 
--DATABASE TESTING COMPLETED.
+- DATABASE TESTING COMPLETED.
 
--REST API TESTING PENDING.
+- REST API TESTING PENDING.
 
--REPROSITORY TESTING PENDING.
+- REPROSITORY TESTING PENDING.
 
--VIEWMODEL TESTING PENDING.
+- VIEWMODEL TESTING PENDING.
 
--FRAGMENT NAVIGATION TESTING USING ESPERSSO PENDING.
+- FRAGMENT NAVIGATION TESTING USING ESPERSSO PENDING.
 
--ACTIVITY TESTING IS COMPLETED
+- ACTIVITY TESTING IS COMPLETED
 
 
 ##⚙ To get started with this project, simply pull the repository and import the project into Android Studio. From there, deploy the project to an emulator or device. 
