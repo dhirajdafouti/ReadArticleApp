@@ -20,7 +20,7 @@ class DefaultArticleRepository @Inject constructor(
         return dao.insertArticles(articleData)
     }
 
-    override suspend fun getArticleWithIdFromRemoteServer(itemId: Int): Response<RemoteArticleData> {
+    override suspend fun getArticleWithIdFromRemoteServer(itemId: Int): Response<String> {
         return service.getArticlesWithArticleId(itemId)
     }
 

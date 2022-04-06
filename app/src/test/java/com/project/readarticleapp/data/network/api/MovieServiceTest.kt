@@ -2,12 +2,9 @@ package com.project.readarticleapp.data.network.api
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.gson.GsonBuilder
-import com.google.gson.annotations.SerializedName
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.project.readarticleapp.data.network.networkModels.mapper.NetworkArticleData
 import com.project.readarticleapp.data.network.networkModels.mapper.asArticleDataBaseModel
 import com.project.readarticleapp.data.network.networkModels.mapper.parseRemoteArticleJsonToResult
-import com.project.readarticleapp.model.DataBaseArticleDetailsData
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.runBlocking
@@ -15,14 +12,12 @@ import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okio.buffer
 import okio.source
+import org.json.JSONArray
 import org.junit.*
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.moshi.MoshiConverterFactory
-import junit.framework.TestCase
-import org.json.JSONArray
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
 
@@ -54,7 +49,7 @@ class MovieServiceTest {
     }
 
     @Test
-    fun getArticleListTest() = runBlocking {
+    fun getMovieOfferTest() = runBlocking {
         enqueueResponse("articles.json")
         val result=service.getArticles().body()
         val jsonArray = JSONArray(result)
@@ -78,12 +73,16 @@ class MovieServiceTest {
         )
     }
 
-    //TODO:
     @Test
-    fun getArticleListWithId() = runBlocking {
+    fun testArticleWithId()= runBlocking{
+        enqueueResponse("articleId.json")
+        val result=service.getArticlesWithArticleId(14527).body()
+        val jsonArray = JSONArray(result)
+
+        Assert.assertNotNull(NetworkArticleData(
+            parseRemoteArticleJsonToResult(jsonArray)).asArticleDataBaseModel())
 
     }
-
 
     @After
     fun stopService() {

@@ -10,7 +10,7 @@ interface ArticleInterface {
     suspend fun saveArticlesDataToDataBase(articleData: List<ArticleEntity>)
 
     //TODO:The functionality of the application can be extended with fetching the Article with Item Id from Remote Server.
-    suspend fun getArticleWithIdFromRemoteServer(itemId: Int): Response<RemoteArticleData>
+    suspend fun getArticleWithIdFromRemoteServer(itemId: Int): Response<String>
 
     //TODO:The functionality of the application can be extended with saving the Article data with Item Id onto the database.
     suspend fun saveArticleDataToDataBaseWithItemId(articleData: ArticleEntity)
