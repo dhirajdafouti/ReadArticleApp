@@ -15,7 +15,6 @@ Android Application following the Clean MVVM Architecture concepts.
 - Navigation component
 - Room database
 - Retrofit 2
-- Database caching
 - GSON
 - Monitoring Network Connectivity
 - Swipe To Refresh
@@ -29,11 +28,8 @@ Android Application following the Clean MVVM Architecture concepts.
 - Piccaso.
 - View Bindings
 - Data-Binding.
-- SQL-queries.
-- Less Boiler Plate code.
 - RecyclerView
 - CardView
-- LeakCanary
 - Timber
 
 
