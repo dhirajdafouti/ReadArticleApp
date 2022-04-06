@@ -19,7 +19,7 @@ interface ArticleDao {
 
     //TODO:The functionality of the application  can be extended with Sort Order.
     //The Items from the database can be fetched with sort order id.
-    @Query("Select *FROM article_table ORDER BY id DESC")
+    @Query("Select *FROM article_table ORDER BY id ASC")
     fun getArticleWithSortedId():List<ArticleEntity>
 
     //TODO:The functionality of the application  can be extended with deleting the article item with id.

@@ -8,6 +8,7 @@ import com.google.common.truth.Truth.assertThat
 import junit.framework.TestCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
+import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -45,7 +46,7 @@ class ArticleDaoTest : TestCase() {
 
     @ExperimentalCoroutinesApi
     @Test
-    fun insertAndQueryArctielDataWithId() = runBlocking<Unit> {
+    fun insertAndQueryArticleDataWithId() = runBlocking<Unit> {
         //Information is stored in the Room database memory.
         //InMemoryDatabaseBuilder method helps us to create an in-memory room database.
         // Instance while allowMainThreadQueries() helps us to run the database queries on the main thread.
@@ -64,12 +65,36 @@ class ArticleDaoTest : TestCase() {
 
     }
 
+    @ExperimentalCoroutinesApi
+    @Test
+    fun insertAndQueryArticleDataWithSortedOrder() = runBlocking {
+        articleDataBase = Room.inMemoryDatabaseBuilder(ApplicationProvider.getApplicationContext(),
+            ArticleDataBase::class.java).allowMainThreadQueries().build()
+        val articleList = dummyList()
+        articleDataBase.getArticlesDao().insertArticles(articleList)
+
+        val sortedArticleList = articleDataBase.getArticlesDao().getArticleWithSortedId()
+
+        Assert.assertEquals(sortedArticleList.get(0).featured, true)
+        Assert.assertEquals(sortedArticleList.get(0).summary, "TILE_1_SORTED")
+
+    }
+
     private fun dummyList(): List<ArticleEntity> {
         val articleList = listOf(
-            ArticleEntity(1,
+            ArticleEntity(6,
                 true,
                 "movie1_sub_title1",
                 "NEW1",
+                "SUMMARY",
+                "TILE",
+                "UPDATED",
+                "PUBLISHED",
+                "updated"),
+            ArticleEntity(8,
+                true,
+                "movie2_sub_title1",
+                "NEW2",
                 "SUMMARY",
                 "TILE",
                 "UPDATED",
@@ -93,12 +118,12 @@ class ArticleDaoTest : TestCase() {
                 "UPDATED",
                 "PUBLISHED",
                 "updated"),
-            ArticleEntity(6,
-                true,
+            ArticleEntity(1,
+                false,
                 "movie5_sub_title1",
                 "NEW4",
                 "SUMMARY",
-                "TILE",
+                "TILE_1_SORTED",
                 "UPDATED",
                 "PUBLISHED",
                 "updated"),
