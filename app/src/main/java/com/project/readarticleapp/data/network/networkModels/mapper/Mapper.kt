@@ -2,9 +2,9 @@ package com.project.readarticleapp.data.network.networkModels.mapper
 
 import com.project.readarticleapp.data.database.ArticleEntity
 import com.project.readarticleapp.data.network.networkModels.RemoteArticleItem
-import org.json.JSONObject
 import org.json.JSONArray
 import org.json.JSONException
+import org.json.JSONObject
 import timber.log.Timber
 
 

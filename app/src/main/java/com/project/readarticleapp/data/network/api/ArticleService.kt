@@ -28,5 +28,5 @@ interface ArticleService {
     //Article with id..
     //https://api.spaceflightnewsapi.net/v3/articles/{id}
     @GET("v3/articles")
-    suspend fun getArticlesWithArticleId(@Query("id") id: Int): Response<RemoteArticleData>
+    suspend fun getArticlesWithArticleId(@Query("id") id: Int): Response<String>
 }

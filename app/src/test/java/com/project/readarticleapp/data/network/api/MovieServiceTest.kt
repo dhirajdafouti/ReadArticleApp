@@ -1,7 +1,13 @@
 package com.project.readarticleapp.data.network.api
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.google.gson.GsonBuilder
+import com.google.gson.annotations.SerializedName
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.project.readarticleapp.data.network.networkModels.mapper.NetworkArticleData
+import com.project.readarticleapp.data.network.networkModels.mapper.asArticleDataBaseModel
+import com.project.readarticleapp.data.network.networkModels.mapper.parseRemoteArticleJsonToResult
+import com.project.readarticleapp.model.DataBaseArticleDetailsData
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.runBlocking
@@ -13,7 +19,12 @@ import org.junit.*
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import junit.framework.TestCase
+import org.json.JSONArray
+import retrofit2.converter.scalars.ScalarsConverterFactory
+
 
 @RunWith(JUnit4::class)
 class MovieServiceTest {
@@ -30,20 +41,26 @@ class MovieServiceTest {
 
     @Before
     fun createService() {
+        val gson = GsonBuilder()
+            .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+            .create()
         instantTaskExecutorRule = InstantTaskExecutorRule()
         mockWebService = MockWebServer()
         service = Retrofit.Builder()
             .baseUrl(mockWebService.url("/"))
-            .addConverterFactory(MoshiConverterFactory.create(moshiBuilder))
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build().create(ArticleService::class.java)
     }
 
     @Test
-    fun getMovieOfferTest() = runBlocking {
-        enqueueResponse("movie_offers.json")
-        val movieOffer = service.getArticles().body()
-        Assert.assertNotNull(movieOffer)
+    fun getArticleListTest() = runBlocking {
+        enqueueResponse("articles.json")
+        val result=service.getArticles().body()
+        val jsonArray = JSONArray(result)
+
+        Assert.assertNotNull(NetworkArticleData(
+            parseRemoteArticleJsonToResult(jsonArray)).asArticleDataBaseModel())
 
     }
 
@@ -61,9 +78,16 @@ class MovieServiceTest {
         )
     }
 
+    //TODO:
+    @Test
+    fun getArticleListWithId() = runBlocking {
+
+    }
+
 
     @After
     fun stopService() {
         mockWebService.shutdown()
     }
+
 }

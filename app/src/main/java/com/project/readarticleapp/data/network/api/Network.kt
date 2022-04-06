@@ -27,8 +27,7 @@ private fun httpClient(): OkHttpClient {
     return clientBuilder.build()
 }
 
-private val moshiBuilder = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
-private var gson = GsonBuilder()
+var gson = GsonBuilder()
     .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
     .create()
 
@@ -39,6 +38,6 @@ private fun retrofitClient(
     Retrofit.Builder()
         .baseUrl(baseUrl)
         .client(httpClient)
-        .addConverterFactory(ScalarsConverterFactory.create())
+        .addConverterFactory(ScalarsConverterFactory.create())//to get a string in response.
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
