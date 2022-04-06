@@ -63,7 +63,7 @@ You can check the code coverage report of your instrumented and unit tests local
 
 - DATABASE TESTING COMPLETED.
 
-- REST API TESTING PENDING.
+- REST API TESTING COMPLETED.
 
 - ACTIVITY TESTING IS COMPLETED
 
