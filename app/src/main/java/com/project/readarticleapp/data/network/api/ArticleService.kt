@@ -2,9 +2,7 @@ package com.project.readarticleapp.data.network.api
 
 
 import com.project.readarticleapp.data.network.networkModels.RemoteArticleData
-import org.json.JSONArray
 import retrofit2.Response
-
 import retrofit2.http.GET
 import retrofit2.http.Query
 

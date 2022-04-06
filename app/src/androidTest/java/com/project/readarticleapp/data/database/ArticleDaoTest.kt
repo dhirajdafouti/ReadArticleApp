@@ -74,7 +74,6 @@ class ArticleDaoTest : TestCase() {
         articleDataBase.getArticlesDao().insertArticles(articleList)
 
         val sortedArticleList = articleDataBase.getArticlesDao().getArticleWithSortedId()
-
         Assert.assertEquals(sortedArticleList.get(0).featured, true)
         Assert.assertEquals(sortedArticleList.get(0).summary, "TILE_1_SORTED")
 
