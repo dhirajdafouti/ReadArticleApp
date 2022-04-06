@@ -67,6 +67,11 @@ You can check the code coverage report of your instrumented and unit tests local
 
 - ACTIVITY TESTING IS COMPLETED
 
+- REPOSITORY TESTING IS COMPLETED
+
+- VIEW TESTING IS COMPLETED.
+
+- FRAGMENT TESTING /NAVIGATION TESTING /RECYCLER TESTING IS PENDING.
 
 ##⚙ To get started with this project, simply pull the repository and import the project into Android Studio. From there, deploy the project to an emulator or device. 
 
