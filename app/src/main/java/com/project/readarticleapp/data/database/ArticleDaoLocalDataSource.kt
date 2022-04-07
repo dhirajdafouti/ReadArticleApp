@@ -3,7 +3,7 @@ package com.project.readarticleapp.data.database
 import androidx.room.*
 
 @Dao
-interface ArticleDao {
+interface ArticleDaoLocalDataSource {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertArticles(articleEntity: List<ArticleEntity>)
