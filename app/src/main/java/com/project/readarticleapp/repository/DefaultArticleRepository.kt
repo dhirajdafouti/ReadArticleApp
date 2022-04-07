@@ -1,6 +1,6 @@
 package com.project.readarticleapp.repository
 
-import com.project.readarticleapp.data.database.ArticleDaoLocalDataSource
+import com.project.readarticleapp.data.database.ArticleDao
 import com.project.readarticleapp.data.database.ArticleEntity
 import com.project.readarticleapp.data.network.api.ArticleService
 import retrofit2.Response
@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 
 class DefaultArticleRepository @Inject constructor(
-    private val dao: ArticleDaoLocalDataSource,
+    private val dao: ArticleDao,
     private val service: ArticleService,
 ) : ArticleInterface {
     override suspend fun getArticlesFromRemoteServer(): Response<String> {

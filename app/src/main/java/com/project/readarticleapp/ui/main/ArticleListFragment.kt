@@ -34,6 +34,8 @@ class ArticleListFragment : Fragment() {
     private lateinit var binding: FragmentArticleListBinding
 
     //View Model InStance
+    //Both fragments retrieve the activity that contains them. That way, when the fragments each get the ViewModelProvider,
+    // they receive the same SharedViewModel instance, which is scoped to this activity.
     private val viewModel by lazy { ViewModelProvider(requireActivity()).get(ArticleViewModel::class.java) }
 
     private lateinit var adapter: ArticleAdapter

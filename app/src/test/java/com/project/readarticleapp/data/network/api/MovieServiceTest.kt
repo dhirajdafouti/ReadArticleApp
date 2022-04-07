@@ -49,15 +49,16 @@ class MovieServiceTest {
     }
 
     @Test
-    fun getMovieOfferTest() = runBlocking {
-        enqueueResponse("articles.json")
-        val result=service.getArticles().body()
-        val jsonArray = JSONArray(result)
+    fun `execute article service api to perfrom rest call, return article response`() =
+        runBlocking {
+            enqueueResponse("articles.json")
+            val result = service.getArticles().body()
+            val jsonArray = JSONArray(result)
 
-        Assert.assertNotNull(NetworkArticleData(
-            parseRemoteArticleJsonToResult(jsonArray)).asArticleDataBaseModel())
+            Assert.assertNotNull(NetworkArticleData(
+                parseRemoteArticleJsonToResult(jsonArray)).asArticleDataBaseModel())
 
-    }
+        }
 
     private fun enqueueResponse(fileName: String, headers: Map<String, String> = emptyMap()) {
         val inputStream = javaClass.classLoader!!
@@ -73,16 +74,12 @@ class MovieServiceTest {
         )
     }
 
+    //TODO:
     @Test
-    fun testArticleWithId()= runBlocking{
-        enqueueResponse("articleId.json")
-        val result=service.getArticlesWithArticleId(14527).body()
-        val jsonArray = JSONArray(result)
+    fun `execute article service api to perform rest call for article id, return article id response`() =
+        runBlocking {
 
-        Assert.assertNotNull(NetworkArticleData(
-            parseRemoteArticleJsonToResult(jsonArray)).asArticleDataBaseModel())
-
-    }
+        }
 
     @After
     fun stopService() {

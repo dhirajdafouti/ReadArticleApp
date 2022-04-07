@@ -68,7 +68,8 @@ class ArticleDaoTest : TestCase() {
     //TODO:
     @ExperimentalCoroutinesApi
     @Test
-    fun insertAndQueryArticleDataWithSortedOrder() = runBlocking {
+    fun insertAndQueryArticleDataWithSortedOrder() = runBlocking<Unit> {
+
 
     }
 

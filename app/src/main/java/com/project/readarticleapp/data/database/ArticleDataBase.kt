@@ -6,5 +6,5 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [ArticleEntity::class], version = 1)
 abstract class ArticleDataBase : RoomDatabase() {
-    abstract fun getArticlesDao(): ArticleDaoLocalDataSource
+    abstract fun getArticlesDao(): ArticleDao
 }

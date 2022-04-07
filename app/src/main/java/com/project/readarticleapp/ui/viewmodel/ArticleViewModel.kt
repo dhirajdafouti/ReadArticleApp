@@ -50,6 +50,12 @@ class ArticleViewModel @Inject constructor(
     fun getArticles() {
         viewModelScope.launch {
             _progress.postValue(true)
+            //Important: 
+            // Using suspend doesn't tell Kotlin to run a function on a background thread.
+            // It's normal for suspend functions to operate on the main thread.
+            // It's also common to launch coroutines on the main thread.
+            // You should always use withContext() inside a suspend function when you need main-safety,
+            // such as when reading from or writing to disk, performing network operations, or running CPU-intensive operatio
             withContext((Dispatchers.IO)) {
                 try {
                     val result = articleRepoInterface.getArticlesFromRemoteServer()
