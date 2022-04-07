@@ -19,7 +19,6 @@ open class BaseRepository : ArticleInterface {
 
     private lateinit var service: ArticleService
 
-    private lateinit var mDataBase: ArticleDataBase
 
     private lateinit var mockWebService: MockWebServer
 
@@ -35,7 +34,7 @@ open class BaseRepository : ArticleInterface {
     }
 
 
-    public fun enqueueResponse(fileName: String, headers: Map<String, String> = emptyMap()) {
+    private fun enqueueResponse(fileName: String, headers: Map<String, String> = emptyMap()) {
         val inputStream = javaClass.classLoader!!
             .getResourceAsStream("api-response/$fileName")
         val source = inputStream.source().buffer()
