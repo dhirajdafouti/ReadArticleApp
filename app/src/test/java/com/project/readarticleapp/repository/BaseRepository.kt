@@ -1,9 +1,5 @@
 package com.project.readarticleapp.repository
 
-import androidx.room.Room
-import androidx.test.core.app.ApplicationProvider
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.project.readarticleapp.data.database.ArticleDataBase
 import com.project.readarticleapp.data.database.ArticleEntity
 import com.project.readarticleapp.data.network.api.ArticleService
 import okhttp3.mockwebserver.MockResponse
@@ -19,6 +15,7 @@ open class BaseRepository : ArticleInterface {
 
     private lateinit var service: ArticleService
 
+    private val saveArticleList = mutableListOf<ArticleEntity>()
 
     private lateinit var mockWebService: MockWebServer
 
@@ -28,13 +25,12 @@ open class BaseRepository : ArticleInterface {
         service = Retrofit.Builder()
             .baseUrl(mockWebService.url("/"))
             .addConverterFactory(ScalarsConverterFactory.create())
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build().create(ArticleService::class.java)
 
     }
 
 
-    private fun enqueueResponse(fileName: String, headers: Map<String, String> = emptyMap()) {
+     fun enqueueResponse(fileName: String, headers: Map<String, String> = emptyMap()) {
         val inputStream = javaClass.classLoader!!
             .getResourceAsStream("api-response/$fileName")
         val source = inputStream.source().buffer()
@@ -53,23 +49,25 @@ open class BaseRepository : ArticleInterface {
     }
 
     override suspend fun getArticlesFromRemoteServer(): Response<String> {
+        enqueueResponse("articles.json")
         return service.getArticles()
     }
 
     override suspend fun saveArticlesDataToDataBase(articleData: List<ArticleEntity>) {
-        TODO("Not yet implemented")
+        saveArticleList.addAll(articleData)
     }
 
     override suspend fun getArticleWithIdFromRemoteServer(itemId: Int): Response<String> {
-        TODO("Not yet implemented")
+        enqueueResponse("articleId.json")
+        return service.getArticlesWithArticleId(itemId)
     }
 
     override suspend fun saveArticleDataToDataBaseWithItemId(articleData: ArticleEntity) {
-        TODO("Not yet implemented")
+        saveArticleList.add(articleData)
     }
 
     override fun getArticleDataListFromDataBase(): List<ArticleEntity> {
-        TODO("Not yet implemented")
+        return saveArticleList
     }
 
     override fun getArticleDataDetailsFromDataBase(itemId: Int): ArticleEntity {

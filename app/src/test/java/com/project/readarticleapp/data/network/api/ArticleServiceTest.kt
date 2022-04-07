@@ -1,7 +1,6 @@
 package com.project.readarticleapp.data.network.api
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.google.gson.GsonBuilder
 import com.project.readarticleapp.data.network.networkModels.mapper.NetworkArticleData
 import com.project.readarticleapp.data.network.networkModels.mapper.asArticleDataBaseModel
 import com.project.readarticleapp.data.network.networkModels.mapper.parseRemoteArticleJsonToResult
@@ -17,12 +16,11 @@ import org.junit.*
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
 
 @RunWith(JUnit4::class)
-class MovieServiceTest {
+class ArticleServiceTest {
     /**
      * InstantTaskExecutorRule is a JUnit Test Rule that swaps the background executor used
      * by the Architecture Components with a different one which executes each task synchronously.
@@ -36,15 +34,11 @@ class MovieServiceTest {
 
     @Before
     fun createService() {
-        val gson = GsonBuilder()
-            .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
-            .create()
         instantTaskExecutorRule = InstantTaskExecutorRule()
         mockWebService = MockWebServer()
         service = Retrofit.Builder()
             .baseUrl(mockWebService.url("/"))
             .addConverterFactory(ScalarsConverterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create(gson))
             .build().create(ArticleService::class.java)
     }
 
@@ -52,7 +46,7 @@ class MovieServiceTest {
     fun `execute article service api to perfrom rest call, return article response`() =
         runBlocking {
             enqueueResponse("articles.json")
-            val result = service.getArticles().body()
+            val result = service.getArticles()
             val jsonArray = JSONArray(result)
 
             Assert.assertNotNull(NetworkArticleData(
