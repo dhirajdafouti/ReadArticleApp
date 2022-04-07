@@ -1,6 +1,9 @@
 package com.project.readarticleapp.repository
 
+import androidx.room.Room
+import androidx.test.core.app.ApplicationProvider
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.project.readarticleapp.data.database.ArticleDataBase
 import com.project.readarticleapp.data.database.ArticleEntity
 import com.project.readarticleapp.data.network.api.ArticleService
 import okhttp3.mockwebserver.MockResponse
@@ -15,6 +18,9 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 open class BaseRepository : ArticleInterface {
 
     private lateinit var service: ArticleService
+
+    private lateinit var mDataBase: ArticleDataBase
+
     private lateinit var mockWebService: MockWebServer
 
 
@@ -29,7 +35,7 @@ open class BaseRepository : ArticleInterface {
     }
 
 
-    private fun enqueueResponse(fileName: String, headers: Map<String, String> = emptyMap()) {
+    public fun enqueueResponse(fileName: String, headers: Map<String, String> = emptyMap()) {
         val inputStream = javaClass.classLoader!!
             .getResourceAsStream("api-response/$fileName")
         val source = inputStream.source().buffer()
@@ -48,7 +54,7 @@ open class BaseRepository : ArticleInterface {
     }
 
     override suspend fun getArticlesFromRemoteServer(): Response<String> {
-        TODO("Not yet implemented")
+        return service.getArticles()
     }
 
     override suspend fun saveArticlesDataToDataBase(articleData: List<ArticleEntity>) {
