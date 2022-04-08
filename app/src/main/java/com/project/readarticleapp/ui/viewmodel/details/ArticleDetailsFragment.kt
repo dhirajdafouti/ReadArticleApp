@@ -1,4 +1,4 @@
-package com.project.readarticleapp.ui.details
+package com.project.readarticleapp.ui.viewmodel.details
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -46,7 +46,6 @@ class ArticleDetailsFragment : Fragment() {
         viewModel.articleDetailsData.observe(viewLifecycleOwner, Observer {
             when (it) {
                 is ArticleDetailsResult.Success -> {
-                    System.out.println(it.data.toString())
                     if (BindingAdapter.validUrl(it.data.imageUrl)) {
                         BindingAdapter.bindLoadImage(binding.mainImageView, it.data.imageUrl)
                     }

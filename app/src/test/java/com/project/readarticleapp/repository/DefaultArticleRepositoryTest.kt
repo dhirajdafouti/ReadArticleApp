@@ -4,9 +4,6 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.gson.GsonBuilder
 import com.project.readarticleapp.data.database.ArticleEntity
 import com.project.readarticleapp.data.network.api.ArticleService
-import com.project.readarticleapp.data.network.networkModels.mapper.NetworkArticleData
-import com.project.readarticleapp.data.network.networkModels.mapper.asArticleDataBaseModel
-import com.project.readarticleapp.data.network.networkModels.mapper.parseRemoteArticleJsonToResult
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import junit.framework.TestCase
@@ -15,8 +12,10 @@ import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okio.buffer
 import okio.source
-import org.json.JSONArray
-import org.junit.*
+import org.junit.After
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import retrofit2.Response
@@ -26,6 +25,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 
 
 @RunWith(JUnit4::class)
+
 class DefaultMovieRepositoryTest : TestCase(), ArticleInterface {
 
     @Rule
@@ -98,6 +98,6 @@ class DefaultMovieRepositoryTest : TestCase(), ArticleInterface {
     }
 
     override fun getArticleDataDetailsFromDataBase(itemId: Int): ArticleEntity {
-        TODO("Not yet implemented")
+        return saveArticleList.get(0)
     }
 }

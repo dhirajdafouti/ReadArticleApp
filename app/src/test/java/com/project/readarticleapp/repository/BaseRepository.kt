@@ -29,8 +29,7 @@ open class BaseRepository : ArticleInterface {
 
     }
 
-
-     fun enqueueResponse(fileName: String, headers: Map<String, String> = emptyMap()) {
+    fun enqueueResponse(fileName: String, headers: Map<String, String> = emptyMap()) {
         val inputStream = javaClass.classLoader!!
             .getResourceAsStream("api-response/$fileName")
         val source = inputStream.source().buffer()
@@ -44,6 +43,56 @@ open class BaseRepository : ArticleInterface {
         )
     }
 
+    public fun dummyList(): List<ArticleEntity> {
+        val articleList = listOf(
+            ArticleEntity(6,
+                true,
+                "movie1_sub_title1",
+                "NEW1",
+                "SUMMARY",
+                "TILE",
+                "UPDATED",
+                "PUBLISHED",
+                "updated"),
+            ArticleEntity(8,
+                true,
+                "movie2_sub_title1",
+                "NEW2",
+                "SUMMARY",
+                "TILE",
+                "UPDATED",
+                "PUBLISHED",
+                "updated"),
+            ArticleEntity(2,
+                true,
+                "movie2_sub_title1",
+                "NEW2",
+                "SUMMARY",
+                "TILE",
+                "UPDATED",
+                "PUBLISHED",
+                "updated"),
+            ArticleEntity(4,
+                true,
+                "movie3_sub_title1",
+                "NEW3",
+                "SUMMARY",
+                "TILE",
+                "UPDATED",
+                "PUBLISHED",
+                "updated"),
+            ArticleEntity(1,
+                false,
+                "movie5_sub_title1",
+                "NEW4",
+                "SUMMARY",
+                "TILE_1_SORTED",
+                "UPDATED",
+                "PUBLISHED",
+                "updated"),
+        )
+        return articleList
+    }
     public fun tearDown() {
         mockWebService.shutdown()
     }
@@ -71,7 +120,7 @@ open class BaseRepository : ArticleInterface {
     }
 
     override fun getArticleDataDetailsFromDataBase(itemId: Int): ArticleEntity {
-        TODO("Not yet implemented")
+        return saveArticleList.get(0)
     }
 
 }

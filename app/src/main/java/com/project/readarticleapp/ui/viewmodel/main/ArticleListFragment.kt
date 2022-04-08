@@ -1,4 +1,4 @@
-package com.project.readarticleapp.ui.main
+package com.project.readarticleapp.ui.viewmodel.main
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter

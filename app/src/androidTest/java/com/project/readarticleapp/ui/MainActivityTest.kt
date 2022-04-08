@@ -27,7 +27,6 @@ class MainActivityTest {
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
         Espresso.onView(withId(R.id.appBar))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-        Espresso.onView(withId(R.id.appBar)).check(ViewAssertions.matches(ViewMatchers.hasTextColor(R.color.toolbarColor)))
 
         Espresso.onView(withId(R.id.toolbar))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))

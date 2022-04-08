@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.project.readarticleapp.ui.main.ArticleListFragment"
+        android:name="com.project.readarticleapp.ui.viewmodel.main.ArticleListFragment"
         android:label="News Headlines"
         tools:layout="@layout/fragment_article_list">
         <action
@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:label="News"
-        android:name="com.project.readarticleapp.ui.details.ArticleDetailsFragment"
+        android:name="com.project.readarticleapp.ui.viewmodel.details.ArticleDetailsFragment"
         tools:layout="@layout/fragment_article_details">
         <action
             android:id="@+id/action_detailsFragment_to_listFragment"

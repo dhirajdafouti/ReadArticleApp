@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
-            tools:context="ui.main.ArticleListFragment">
+            tools:context=".ui.viewmodel.main.ArticleListFragment">
 
             <LinearLayout
                 android:id="@+id/networkStatusLayout"
