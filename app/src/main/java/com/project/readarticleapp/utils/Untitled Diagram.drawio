@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-08T06:55:43.202Z" agent="5.0 (Windows)" etag="2fqx509_MJ4GwTO_3T-A" version="17.4.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-08T06:59:10.512Z" agent="5.0 (Windows)" etag="R62QL5ihT6Xt1DBb1W5V" version="17.4.1" type="github">
   <diagram id="wjaxYszw41zFd_kDudd0" name="Page-1">
-    <mxGraphModel dx="2084" dy="1538" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#F4F1DE" math="0" shadow="0">
+    <mxGraphModel dx="3318" dy="1976" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#F4F1DE" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -170,19 +170,6 @@
         <mxCell id="qmoSsivqGrwg9p8YMAHi-96" value="Response/Error&amp;nbsp; " style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#393C56;labelBackgroundColor=#F4F1DE;" parent="1" vertex="1">
           <mxGeometry x="550" y="150" width="130" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="Sdi-ItSe5vTOaasgq7WP-4" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=30;fontColor=#393C56;strokeColor=#E07A5F;fillColor=#F2CC8F;labelBackgroundColor=#F4F1DE;" parent="1" source="Sdi-ItSe5vTOaasgq7WP-3" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="60" y="-160" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Sdi-ItSe5vTOaasgq7WP-5" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=30;fontColor=#393C56;strokeColor=#E07A5F;fillColor=#F2CC8F;labelBackgroundColor=#F4F1DE;" parent="1" source="Sdi-ItSe5vTOaasgq7WP-3" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="810" y="-160" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Sdi-ItSe5vTOaasgq7WP-3" value="PRESENTATION LAYER" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#393C56;fontStyle=1;fontSize=30;" parent="1" vertex="1">
-          <mxGeometry x="285" y="-180" width="350" height="40" as="geometry" />
-        </mxCell>
         <mxCell id="qmoSsivqGrwg9p8YMAHi-45" value="&lt;h1 style=&quot;font-size: 22px;&quot;&gt;Single Source of Truth &lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=22;labelBackgroundColor=#FF0080;fontColor=#393C56;" parent="1" vertex="1">
           <mxGeometry x="25" y="310" width="250" height="60" as="geometry" />
         </mxCell>
@@ -257,6 +244,9 @@
         </mxCell>
         <mxCell id="QVQ9O9PQBRYbGwQxGyxz-49" value="DATA LAYER" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=22;" vertex="1" parent="1">
           <mxGeometry x="-25" y="625" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QVQ9O9PQBRYbGwQxGyxz-52" value="PRESENTATION LAYER" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry x="-180" y="-15" width="260" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
