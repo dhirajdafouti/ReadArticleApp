@@ -60,27 +60,6 @@ class ArticleViewModelTest : TestCase() {
     @Test
     fun `fetching article details from article data base with id, return article details`() =
         runBlocking {
-            mBaseRepository.saveArticlesDataToDataBase(mutableListOf(ArticleEntity(6,
-                true,
-                "movie1_sub_title1",
-                "NEW1",
-                "SUMMARY",
-                "TILE",
-                "UPDATED",
-                "PUBLISHED",
-                "updated"), ArticleEntity(6,
-                true,
-                "movie1_sub_title1",
-                "NEW1",
-                "SUMMARY",
-                "TILE",
-                "UPDATED",
-                "PUBLISHED",
-                "updated")))
-
-            viewModel.getArticleDetails(1)
-            val articleId = viewModel.articleDetailsData.getOrAwaitValueTest()
-            Assert.assertNotNull(articleId)
 
         }
 

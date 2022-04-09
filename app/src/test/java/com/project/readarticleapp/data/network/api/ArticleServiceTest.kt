@@ -72,7 +72,14 @@ class ArticleServiceTest {
     @Test
     fun `execute article service api to perform rest call for article id, return article id response`() =
         runBlocking {
-
+        enqueueResponse("articleId.json")
+           val result= service.getArticlesWithArticleId(14527)
+            val isSuccessFul=result.isSuccessful
+            val code =result.code()
+            val articleData=result.body()
+            Assert.assertNotNull(articleData)
+            Assert.assertEquals(result,isSuccessFul)
+            Assert.assertEquals(code,200)
         }
 
     @After

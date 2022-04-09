@@ -70,7 +70,6 @@ class ArticleDaoTest : TestCase() {
     @Test
     fun insertAndQueryArticleDataWithSortedOrder() = runBlocking<Unit> {
 
-
     }
 
     private fun dummyList(): List<ArticleEntity> {

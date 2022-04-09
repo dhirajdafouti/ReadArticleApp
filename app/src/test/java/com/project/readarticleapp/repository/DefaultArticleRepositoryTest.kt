@@ -77,6 +77,57 @@ class DefaultMovieRepositoryTest : TestCase(), ArticleInterface {
         super.tearDown()
     }
 
+    private fun dummyList(): List<ArticleEntity> {
+        val articleList = listOf(
+            ArticleEntity(6,
+                true,
+                "movie1_sub_title1",
+                "NEW1",
+                "SUMMARY",
+                "TILE",
+                "UPDATED",
+                "PUBLISHED",
+                "updated"),
+            ArticleEntity(8,
+                true,
+                "movie2_sub_title1",
+                "NEW2",
+                "SUMMARY",
+                "TILE",
+                "UPDATED",
+                "PUBLISHED",
+                "updated"),
+            ArticleEntity(2,
+                true,
+                "movie2_sub_title1",
+                "NEW2",
+                "SUMMARY",
+                "TILE",
+                "UPDATED",
+                "PUBLISHED",
+                "updated"),
+            ArticleEntity(4,
+                true,
+                "movie3_sub_title1",
+                "NEW3",
+                "SUMMARY",
+                "TILE",
+                "UPDATED",
+                "PUBLISHED",
+                "updated"),
+            ArticleEntity(1,
+                false,
+                "movie5_sub_title1",
+                "NEW4",
+                "SUMMARY",
+                "TILE_1_SORTED",
+                "UPDATED",
+                "PUBLISHED",
+                "updated"),
+        )
+        return articleList
+    }
+
     override suspend fun getArticlesFromRemoteServer(): Response<String> {
         return service.getArticles()
     }
